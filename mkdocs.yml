@@ -1,0 +1,60 @@
+site_name: Documentación APIs Tecopos
+
+nav:
+  - "Comienza aquí": "index.md"
+  - "Procesos":
+      - "Autenticación": "procesos/autenticación.md"
+      - "Usuarios": "procesos/usuarios.md"
+      - "Capital humano": "procesos/capital-humano.md"
+      - "Almacenes": "procesos/almacenes.md"
+      - "Clientes": "procesos/clientes.md"
+      - "Proveedores": "procesos/proveedores.md"
+      - "Producción": "procesos/producción.md"
+      - "Ventas": "procesos/ventas.md"
+      - "Análisis": "procesos/análisis.md"
+  - "Glosario": "glosario.md"
+  - "Acerca": "acerca.md"
+
+theme:
+  name: material
+  favicon: images/favicon.png
+  logo: images/favicon.png
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+    feedback:
+      title: ¿Qué te pareció esta página?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: Esta página fue útil
+          data: 1
+          note: >-
+            ¡Gracias por tu ayuda!
+        - icon: material/thumb-down-outline
+          name: Esta página puede mejorar
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
