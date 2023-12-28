@@ -1,6 +1,6 @@
 # Almacenes
 
-Desde los procesos involucrados con los almacenes se gestionan los siguientes flujos:
+El proceso de seguimiento de los almacenes abarcan los siguientes flujos:
 
 > <mark>Nota importante:</mark>
 > 
@@ -11,10 +11,11 @@ Desde los procesos involucrados con los almacenes se gestionan los siguientes fl
 1. Compra o entrada de productos
 2. Traslado de un producto hacia otra área
 3. Baja de un producto
-4. Ajuste sobre la cantidad de un producto
+4. Ajuste de la cantidad de un producto
 5. Conversión de un producto en otro
 
-<br>
+</br>
+
 #### 1. Compra o entrada de productos
 
 Para realizar la compra de un producto, el cliente de las API de Tecopos debe estar primeramente autenticado a través de un usuario que le permita realizar dicha operación. 
@@ -23,28 +24,102 @@ Para realizar la compra de un producto, el cliente de las API de Tecopos debe es
 	flowchart LR
 		A[Cliente] --> B1[Autenticación]
 		B1 --[petición usuario autenticado]--> C[Endpoint /product]
+		C --[200]--> OK[OK]
+		C --[400]--> D[Error]
 ```
 
+Endpoints:
 
-**Endpoints involucrados**
-
-| Método HTTP | Dirección | Entrada de datos | Ejemplos interactivos en Postman |
+| Método HTTP | Dirección | Entrada de datos | Probar en Postman |
 | ---- | ---- | ---- | ---- |
-| POST | /product | {} | [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/:collection_id) |
+| POST | /product | Objeto [NewProduct](#newProduct) | [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/:collection_id) |
 
-<br>
+Objeto <bold id="newProduct">NewProduct</bold> </br> <sub>Propiedades:</sub>
+
+- *name* [string]: </br> nombre del producto
+
+---
+
+- *price* [number]: </br> precio del producto
+
+---
+
+- *salesCategoryId* [number]: </br> identicador único de la categoría de ventas a la que pertenece el producto
+
+---
+
+- *type* [string]: </br> [tipo de producto](../glosario.md#tipos-productos)
+
+Ejemplo:
+
+```json
+{
+  "name": "Pantalón",
+  "price": 350,
+  "salesCategoryId": 15,
+  "type": "VARIATION"
+}
+```
+
+</br>
+</br>
+</br>
 
 #### 2. Traslado de un producto hacia otra área
 
-Para realizar el traslado de un producto, el cliente de las API de Tecopos debe estar primeramente autenticado a través de un usuario que le permita realizar dicha operación. 
+[Descripcion]
 
-**Endpoints involucrados**
+[Diagrama]
 
-- dfdf
+[Endpoint]
 
------
+[Esquema]
+
+</br>
+</br>
+</br>
+
+#### 3. Baja de un producto
+
+[Descripcion]
+
+[Diagrama]
+
+[Endpoint]
+
+[Esquema]
+
+</br>
+</br>
+</br>
+
+#### 4. Ajuste de la cantidad de un producto
+
+[Descripcion]
+
+[Diagrama]
+
+[Endpoint]
+
+[Esquema]
+
+</br>
+</br>
+</br>
+
+#### 5. Conversión de un producto en otro
+
+[Descripcion]
+
+[Diagrama]
+
+[Endpoint]
+
+[Esquema]
+
+---
+
 ### Gestión de Almacenes
 
 - Creación de un almacén
 - Designación de usuario responsable sobre un almacén
-

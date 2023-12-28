@@ -4,7 +4,7 @@ Definiciones de términos comunes usados en la APIs de Tecopos
 
 Los productos constituyen bienes de un negocio. Estos bienes poseen características comunes: nombre, descripción, código de barra, cantidad, etc. Según el propósito de su obtención y la utilidad que ofrezcan pueden ser clasificados.
 
-### Tipos de productos
+### <bold id="tipos-productos">Tipos de productos</bold>
 
 |**Listos para vender**             |**Almacenables**|
 |-----------------------------------|----------------|
