@@ -396,6 +396,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3-baja-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Baja de un producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ajuste-de-la-cantidad-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ajuste de la cantidad de un producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-conversion-de-un-producto-en-otro" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Conversión de un producto en otro
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -625,6 +652,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3-baja-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Baja de un producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ajuste-de-la-cantidad-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ajuste de la cantidad de un producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-conversion-de-un-producto-en-otro" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Conversión de un producto en otro
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -655,7 +709,7 @@
 
 
 <h1 id="almacenes">Almacenes</h1>
-<p>Desde los procesos involucrados con los almacenes se gestionan los siguientes flujos:</p>
+<p>El proceso de seguimiento de los almacenes abarcan los siguientes flujos:</p>
 <blockquote>
 <p><mark>Nota importante:</mark></p>
 <p>Para completar cada uno de estos flujos , el cliente de las API de Tecopos debe estar primeramente <a href="../autenticaci%C3%B3n/">autenticado</a> a través de un <a href="../usuarios/">usuario</a> que le permita realizar dicha operación</p>
@@ -665,41 +719,92 @@
 <li>Compra o entrada de productos</li>
 <li>Traslado de un producto hacia otra área</li>
 <li>Baja de un producto</li>
-<li>Ajuste sobre la cantidad de un producto</li>
+<li>Ajuste de la cantidad de un producto</li>
 <li>Conversión de un producto en otro</li>
 </ol>
-<p><br></p>
+<p></br></p>
 <h4 id="1-compra-o-entrada-de-productos">1. Compra o entrada de productos</h4>
 <p>Para realizar la compra de un producto, el cliente de las API de Tecopos debe estar primeramente autenticado a través de un usuario que le permita realizar dicha operación. </p>
 <pre class="mermaid"><code>    flowchart LR
         A[Cliente] --&gt; B1[Autenticación]
-        B1 --[petición usuario autenticado]--&gt; C[Endpoint /product]</code></pre>
-<p><strong>Endpoints involucrados</strong></p>
+        B1 --[petición usuario autenticado]--&gt; C[Endpoint /product]
+        C --[200]--&gt; OK[OK]
+        C --[400]--&gt; D[Error]</code></pre>
+<p>Endpoints:</p>
 <table>
 <thead>
 <tr>
 <th>Método HTTP</th>
 <th>Dirección</th>
 <th>Entrada de datos</th>
-<th>Ejemplos interactivos en Postman</th>
+<th>Probar en Postman</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>POST</td>
 <td>/product</td>
-<td>{}</td>
+<td>Objeto <a href="#newProduct">NewProduct</a></td>
 <td><a href="https://god.gw.postman.com/run-collection/:collection_id"><img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;"></a></td>
 </tr>
 </tbody>
 </table>
-<p><br></p>
-<h4 id="2-traslado-de-un-producto-hacia-otra-area">2. Traslado de un producto hacia otra área</h4>
-<p>Para realizar el traslado de un producto, el cliente de las API de Tecopos debe estar primeramente autenticado a través de un usuario que le permita realizar dicha operación. </p>
-<p><strong>Endpoints involucrados</strong></p>
+<p>Objeto <bold id="newProduct">NewProduct</bold> </br> <sub>Propiedades:</sub></p>
 <ul>
-<li>dfdf</li>
+<li><em>name</em> [string]: </br> nombre del producto</li>
 </ul>
+<hr />
+<ul>
+<li><em>price</em> [number]: </br> precio del producto</li>
+</ul>
+<hr />
+<ul>
+<li><em>salesCategoryId</em> [number]: </br> identicador único de la categoría de ventas a la que pertenece el producto</li>
+</ul>
+<hr />
+<ul>
+<li><em>type</em> [string]: </br> <a href="../../glosario/#tipos-productos">tipo de producto</a></li>
+</ul>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pantalón&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;salesCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VARIATION&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p></br>
+</br>
+</br></p>
+<h4 id="2-traslado-de-un-producto-hacia-otra-area">2. Traslado de un producto hacia otra área</h4>
+<p>[Descripcion]</p>
+<p>[Diagrama]</p>
+<p>[Endpoint]</p>
+<p>[Esquema]</p>
+<p></br>
+</br>
+</br></p>
+<h4 id="3-baja-de-un-producto">3. Baja de un producto</h4>
+<p>[Descripcion]</p>
+<p>[Diagrama]</p>
+<p>[Endpoint]</p>
+<p>[Esquema]</p>
+<p></br>
+</br>
+</br></p>
+<h4 id="4-ajuste-de-la-cantidad-de-un-producto">4. Ajuste de la cantidad de un producto</h4>
+<p>[Descripcion]</p>
+<p>[Diagrama]</p>
+<p>[Endpoint]</p>
+<p>[Esquema]</p>
+<p></br>
+</br>
+</br></p>
+<h4 id="5-conversion-de-un-producto-en-otro">5. Conversión de un producto en otro</h4>
+<p>[Descripcion]</p>
+<p>[Diagrama]</p>
+<p>[Endpoint]</p>
+<p>[Esquema]</p>
 <hr />
 <h3 id="gestion-de-almacenes">Gestión de Almacenes</h3>
 <ul>
