@@ -1,6 +1,7 @@
 ---
 hide:
   - feedback
+  - footer
 ---
 
 # Comienza aquí

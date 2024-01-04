@@ -1,4 +1,21 @@
+---
+hide:
+  - footer
+---
+
 Definiciones de términos comunes usados en la APIs de Tecopos
+
+## <bold id="areas">Áreas</bold>
+
+Las áreas pueden ser considerados como departamentos dentro de un negocio.
+
+### Tipos de áreas
+
+- Área de procesado (MANUFACTURER)
+- Almacenes (STOCK)
+- Tienda Online (SALE)
+- Punto de acceso (ACCESSPOINT)
+
 
 ## **Productos**
 
@@ -6,14 +23,14 @@ Los productos constituyen bienes de un negocio. Estos bienes poseen característ
 
 ### <bold id="tipos-productos">Tipos de productos</bold>
 
-|**Listos para vender**             |**Almacenables**|
-|-----------------------------------|----------------|
-| Elaborado    | Materia prima |
-| Almacén      | Procesado |
-| Variable     | Desperdicio |
-| Servicio     | Activo fijo |
-| Agrego       | |
-| Combo        | |
+| **Listos para vender** | **Almacenables** |
+| ---- | ---- |
+| Elaborado | Materia prima |
+| Almacén | Procesado |
+| Variable | Desperdicio |
+| Servicio | Activo fijo |
+| Agrego |  |
+| Combo |  |
 
 ### Operaciones sobre productos
 
@@ -38,3 +55,17 @@ Los clientes forman parte de los principales destinos de un producto como venta.
 ## **Proveedores**
 
 Los proveedores son las entidades y/o organismos que suministren productos a un negocio.
+
+## **Usuarios**
+
+Los usuarios son las personas que hacen uso de la API de Tecopos mediante aplicaciones clientes ya sean móviles o web. Según el rol que posean es el conjunto de permisos que adquieren sobre los recursos y funcionalidades del sistema.
+
+### <bold id="roles">Roles de usuarios</bold>
+
+Seguidamente se mencionan los roles existentes y casos de uso ordenados de mayor en menor medida de nivel de permisos:
+
+| Rol | Casos de uso |
+| ---- | ---- |
+| Administrador | Propietario del negocio |
+| Control | Contabilidad, Jefe de almacén, Manejador de ciclos económicos, Operario de producción  |
+| Público | Operadores (tienda online, punto de venta, punto de acceso), Camarero |

@@ -7,18 +7,28 @@ nav:
       - "Usuarios": "procesos/usuarios.md"
       - "Capital humano": "procesos/capital-humano.md"
       - "Almacenes": "procesos/almacenes.md"
+      - "Productos": "procesos/productos.md"
       - "Clientes": "procesos/clientes.md"
       - "Proveedores": "procesos/proveedores.md"
       - "Producción": "procesos/producción.md"
       - "Ventas": "procesos/ventas.md"
       - "Análisis": "procesos/análisis.md"
+  - "Genéricos":
+    - "Paginado": "genericos/paginado.md"
+    - "Objetos": "genericos/objetos.md"
+    - "Errores": "genericos/errores.md"
   - "Glosario": "glosario.md"
   - "Acerca": "acerca.md"
 
+exclude_docs: |
+  /notas/
+
 theme:
   name: material
-  favicon: images/favicon.png
-  logo: images/favicon.png
+  features:
+    - navigation.footer
+  favicon: assets/images/favicon.png
+  logo: assets/images/tecopos.png
   language: es
   palette:
     - scheme: default
@@ -40,6 +50,9 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - stylesheets/extra.css
 
 extra:
   analytics:
