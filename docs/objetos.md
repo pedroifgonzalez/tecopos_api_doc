@@ -17,7 +17,7 @@
 
 ---
 
-- type [string]: </br> [tipo de área](../glosario.md#areas)
+- type [string]: </br> [tipo de área](glosario.md#areas)
 
 ---
 

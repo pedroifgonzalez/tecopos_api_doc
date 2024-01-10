@@ -13,10 +13,9 @@ nav:
       - "Producción": "procesos/producción.md"
       - "Ventas": "procesos/ventas.md"
       - "Análisis": "procesos/análisis.md"
-  - "Genéricos":
-    - "Paginado": "genericos/paginado.md"
-    - "Objetos": "genericos/objetos.md"
-    - "Errores": "genericos/errores.md"
+  - "Paginado": "paginado.md"
+  - "Objetos": "objetos.md"
+  - "Errores": "errores.md"
   - "Glosario": "glosario.md"
   - "Acerca": "acerca.md"
 
