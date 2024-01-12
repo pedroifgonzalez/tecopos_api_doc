@@ -1,0 +1,1699 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../capital-humano/">
+      
+      
+        <link rel="next" href="../productos/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Almacenes - Documentación APIs Tecopos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-XXXXXXXXXX",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#almacenes" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Documentación APIs Tecopos" class="md-header__button md-logo" aria-label="Documentación APIs Tecopos" data-md-component="logo">
+      
+  <img src="../../assets/images/tecopos.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentación APIs Tecopos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Almacenes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentación APIs Tecopos" class="md-nav__button md-logo" aria-label="Documentación APIs Tecopos" data-md-component="logo">
+      
+  <img src="../../assets/images/tecopos.png" alt="logo">
+
+    </a>
+    Documentación APIs Tecopos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comienza aquí
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Procesos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Procesos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autenticaci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autenticación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usuarios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capital-humano/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capital humano
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Almacenes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Almacenes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-almacenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de Almacenes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de Almacenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-almacen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de un almacén
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificacion-de-propiedades-y-usos-de-un-almacen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificación de propiedades y usos de un almacén
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-sobre-un-almacen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Información sobre un almacén
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de Productos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de Productos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrada-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada de productos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traslado-de-un-producto-hacia-otra-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traslado de un producto hacia otra área
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baja-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baja de un producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-de-la-cantidad-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajuste de la cantidad de un producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-de-un-producto-en-otro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conversión de un producto en otro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disminucion-de-un-producto-por-desperdicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disminución de un producto por desperdicio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-del-inventario-y-reportes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control del Inventario y Reportes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control del Inventario y Reportes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-de-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención de operaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-del-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención del balance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-de-la-disponibilidad-por-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención de la disponibilidad por producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-de-reportes-dentro-de-un-periodo-determinado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención de reportes dentro de un período determinado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#almacenes-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Almacenes (Áreas)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Productos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inventario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../productos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Productos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clientes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clientes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proveedores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proveedores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../producci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Producción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ventas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ventas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../an%C3%A1lisis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Análisis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../paginado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paginado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objetos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objetos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../errores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Errores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glosario
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acerca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acerca
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-almacenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de Almacenes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de Almacenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-almacen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de un almacén
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificacion-de-propiedades-y-usos-de-un-almacen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificación de propiedades y usos de un almacén
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-sobre-un-almacen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Información sobre un almacén
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de Productos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de Productos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrada-de-productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada de productos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traslado-de-un-producto-hacia-otra-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traslado de un producto hacia otra área
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baja-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baja de un producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-de-la-cantidad-de-un-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ajuste de la cantidad de un producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-de-un-producto-en-otro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conversión de un producto en otro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disminucion-de-un-producto-por-desperdicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disminución de un producto por desperdicio
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-del-inventario-y-reportes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control del Inventario y Reportes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control del Inventario y Reportes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-de-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención de operaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-del-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención del balance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-de-la-disponibilidad-por-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención de la disponibilidad por producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-de-reportes-dentro-de-un-periodo-determinado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención de reportes dentro de un período determinado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#almacenes-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Almacenes (Áreas)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Productos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inventario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="almacenes">Almacenes</h1>
+<p>Los almacenes de un negocio forman parte de las <a href="../../glosario/#areas">áreas</a> que se gestionan en Tecopos.</p>
+<p>Similar a cómo funciona un almacén físico con productos y personas encargadas de llevar un inventario, la API de Tecopos realiza los mismos flujos:</p>
+<p></br></p>
+<blockquote>
+<p><mark>Nota importante:</mark></p>
+<p>Para completar cada uno de estos flujos , el cliente de las API de Tecopos debe estar primeramente <a href="../autenticaci%C3%B3n/">autenticado</a> a través de un <a href="../usuarios/">usuario</a> que le permita realizar dicha operación</p>
+</blockquote>
+<p></br></p>
+<h3 id="gestion-de-almacenes">Gestión de Almacenes</h3>
+<blockquote>
+<p>Limitado a usuarios de rol <a href="../../glosario/#roles">Administrador</a></p>
+</blockquote>
+<p></br></p>
+<ul>
+<li>Creación de un almacén</li>
+<li>Modificación de propiedades y usos de un almacén</li>
+<li>Información sobre un almacén</li>
+</ul>
+<p></br></p>
+<h4 id="creacion-de-un-almacen">Creación de un almacén</h4>
+<p>Un almacén no es más que la creación de un área especificando que sea de tipo <a href="../../glosario/#areas">almacén</a> y proveyendo un nombre para este como identificador de cara a los usuarios.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#nuevo-almacen">/administration/area</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart LR
+    A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/area]
+    B -- Éxito --&gt; C[201]
+    B -- Error --&gt; D[Errores&lt;sup&gt;1&lt;/sup&gt;]</code></pre>
+</br></p>
+<p><sup>1</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="modificacion-de-propiedades-y-usos-de-un-almacen">Modificación de propiedades y usos de un almacén</h4>
+<p>De manera general se pueden modificar los atributos que son generados por parte del usuario. Los que más interesan son el nombre, el estado, y además regular el uso de movimientos directos así como el hacer despachos a partir de órdenes de producción.</p>
+<div style="text-align: right"><sup>Endpoint PATCH <a href="#nuevo-almacen">/administration/area/*idArea*</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart LR
+    A[Cliente
+    autenticado] -- GET&lt;sup&gt;1&lt;/sup&gt; --&gt; B[ /administration/area?type=STOCK]
+    B -- PATCH --&gt; B1
+    A -- PATCH ---&gt; B1[ /administration/area/*idArea*]
+    B1 -- Éxito --&gt; C[201]
+    B1 -- Error --&gt; D[Errores&lt;sup&gt;2&lt;/sup&gt;]</code></pre>
+</br></p>
+<p><sup>1</sup>: en caso de que no tenga el identificador del almacén desde antelación </br>
+<sup>2</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="informacion-sobre-un-almacen">Información sobre un almacén</h4>
+<p>De un almacén además de su nombre y estado se pueden obtener demás tipos de informaciones como una descripción, un código de referencia, si constituye un almacén principal, y otras características comunes que poseen las áreas.</p>
+<div style="text-align: right"><sup>Endpoint GET <a href="#nuevo-almacen">/administration/area/*idArea*</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart LR
+    A[Cliente
+        autenticado] -- GET ---&gt; B[ /administration/area/*idArea*]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;1&lt;/sup&gt;]</code></pre>
+</br></p>
+<p><sup>1</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br>
+</br></p>
+<hr />
+<h3 id="gestion-de-productos">Gestión de Productos</h3>
+<blockquote>
+<p>Limitado a usuarios de rol <a href="../../glosario/#roles">Control</a> o superior.</p>
+</blockquote>
+<p></br></p>
+<ul>
+<li>Entrada de productos</li>
+<li>Traslado de un producto hacia otra área</li>
+<li>Baja de un producto</li>
+<li>Ajuste de la cantidad de un producto</li>
+<li>Conversión de un producto en otro</li>
+<li>Disminución de un producto por desperdicio</li>
+</ul>
+<p></br></p>
+<h4 id="entrada-de-productos">Entrada de productos</h4>
+<p>Después de haberse definidos productos en el sistema, se puede realizar su entrada o en otras palabras el registro de estos luego de realizada una compra.</p>
+<p>Para realizar una entrada de productos debe seleccionarse el almacén destino y los productos adquiridos, según el precio y proveedor si son necesarios especificarse. Como parte del proceso puede añadirse una nota y la cuenta bancaria empleada para dicha operación.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#entrada-productos">/administration/movement/bulk/entry</a></sup></div>
+
+<pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)
+   id3(Selección opcional de cuenta bancaria&lt;sup&gt;3&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/entry]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;4&lt;/sup&gt;]</code></pre>
+<p></br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: endpoint de obtención de cuentas bancarias </br>
+<sup>4</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="traslado-de-un-producto-hacia-otra-area">Traslado de un producto hacia otra área</h4>
+<p>Los productos de un almacén pueden ser trasladados hacia otro almacén, ya sea un su totalidad o determinada cantidad.</p>
+<p>El procedimiento de realizar un traslado es simple. Primeramente se debe seleccionar el almacén origen, y de este, el o los productos a trasladar.  Luego, especificar la cantidad y finalmente el almacén destino. Este proceso también admite el adjunto de una nota para enriquecer el histórico de dicha operación.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#traslado-productos">/administration/movement/bulk/move</a></sup></div>
+
+<pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén origen&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)
+   id3(Selección del almacén destino&lt;sup&gt;1&lt;/sup&gt;)</code></pre>
+<p><pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/move]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="baja-de-un-producto">Baja de un producto</h4>
+<p>De ser necesario necesario se le puede dar salida o baja a un producto. Para ello se especifica la cantidad del producto de determinado almacén para llevar a cabo su ejecución. El proceso admite adjunto de nota para reflejar las razones y/o conocimiento útil para dicha operación.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/out</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/out]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="ajuste-de-la-cantidad-de-un-producto">Ajuste de la cantidad de un producto</h4>
+<p>Los errores por parte de una aplicación cliente pueden suceder, por tanto si se desea realizar un adjuste sobre la cantidad de un producto en el almacén, es posible.</p>
+<p>En dependencia de si la nueva cantidad es especificada es mayor o menor, se considerará la operación como una entrada o salida del mismo correspondientemente.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/adjust</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/adjust]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre></p>
+<p></br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="conversion-de-un-producto-en-otro">Conversión de un producto en otro</h4>
+<p>El sistema de Tecopos es lo suficientemente versátil para utilizar un producto de materia prima, como por ejemplo, un saco de harina, y convertirlo en otros productos, como paquetes de harina de menor proporción.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/transformation</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos base&lt;sup&gt;2&lt;/sup&gt;)
+   id3(Selección de productos transformados&lt;sup&gt;2&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/transformation]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="disminucion-de-un-producto-por-desperdicio">Disminución de un producto por desperdicio</h4>
+<p>En caso de que un producto sufra daño o se desperdicie se puede registrar su merma.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/waste</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén origen&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/waste]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre></p>
+<p></br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br>
+</br></p>
+<hr />
+<h3 id="control-del-inventario-y-reportes">Control del Inventario y Reportes</h3>
+<blockquote>
+<p>Limitado a usuarios de rol <a href="../../glosario/#roles">Control</a> o superior.</p>
+</blockquote>
+<p></br></p>
+<ul>
+<li>Obtención de operaciones</li>
+<li>Obtención del balance</li>
+<li>Obtención de la disponibilidad por producto</li>
+<li>Obtención de reportes dentro de un periodo determinado</li>
+</ul>
+<p></br></p>
+<h4 id="obtencion-de-operaciones">Obtención de operaciones</h4>
+<p>Por cada almacén se puede obtener el historial de operaciones realizadas. De estas se pueden conocer detalles como los productos involucrados, la fecha de su ejecución, el usuario que la registró, entre otros.</p>
+<p>Para facilitar la búsqueda entre operaciones se pueden emplear filtros como el tipo de operación, usuarios, rango de fechas, etc.</p>
+<div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-balance">/administration/movement</a></sup></div>
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A[Cliente
+        autenticado] -- GET ---&gt; B[ /administration/movement]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;2&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="obtencion-del-balance">Obtención del balance</h4>
+<p>Para conocer la situación económica de un negocio, se puede consultar los balances de los almacenes. </p>
+<div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-balance">/report/stock/inventory</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- GET ---&gt; B[ /report/stock/inventory]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;1&lt;/sup&gt;]</code></pre>
+</br></p>
+<p><sup>1</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="obtencion-de-la-disponibilidad-por-producto">Obtención de la disponibilidad por producto</h4>
+<p>El sistema Tecopos ayuda a conocer en tiempo real cual es la disponibilidad de los productos en cada almacén.</p>
+<div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-disponibilidad">/report/stock/disponibility</a></sup></div>
+
+<pre class="mermaid"><code>flowchart LR
+    A[Cliente
+    autenticado] -- GET ---&gt; B[ /report/stock/disponibility]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;1&lt;/sup&gt;]</code></pre>
+<p></br>
+</br></p>
+<h4 id="obtencion-de-reportes-dentro-de-un-periodo-determinado">Obtención de reportes dentro de un período determinado</h4>
+<p>Por cada almacén se puede obtener, un resumen de operaciones sobre cada producto dentro de un periodo de tiempo determinado. </p>
+<div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-reportes-rango">/stock/period-inventory</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A[Cliente
+    autenticado] -- GET ---&gt; B[ /stock/period-inventory]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;2&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br>
+</br></p>
+<hr />
+<h3 id="endpoints">Endpoints</h3>
+<h4 id="almacenes-areas">Almacenes (Áreas)</h4>
+<p><a href="https://god.gw.postman.com/run-collection/:collection_id"><img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 96px; height: 24px;"></a></p>
+<table>
+<thead>
+<tr>
+<th>Descripción</th>
+<th>Método HTTP</th>
+<th>Dirección</th>
+<th>Entrada de datos</th>
+<th>Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Obtención de todos los almacenes</td>
+<td>GET</td>
+<td>/administration/area?type=<a href="../../glosario/#areas">STOCK</a><br></td>
+<td>Filtros comunes de <a href="../../paginado/">paginado</a> </br></br> <em><a href="#tipo-area">type</a></em>=STOCK</td>
+<td><a href="../../paginado/">Paginado</a> de Objeto <a href="../../objetos/#area"><em>getArea</em></a></td>
+</tr>
+<tr>
+<td>Obtención de un almacén en específco</td>
+<td>GET</td>
+<td>/administration/area/*areaId*</td>
+<td><a href="#parametros"><em>areaId</em></a></td>
+<td>Objeto <a href="../../objetos/#area"><em>getArea</em></a></td>
+</tr>
+<tr>
+<td><bold id="nuevo-almacen">Creación de un nuevo almacén</bold></td>
+<td>POST</td>
+<td>/administration/area</td>
+<td><a href="../../objetos/#nueva-area"><em>newArea</em></a></td>
+<td>Objeto <a href="../../objetos/#area"><em>getArea</em></a></td>
+</tr>
+<tr>
+<td>Modificación de un almacén existente</td>
+<td>PATCH</td>
+<td>/administration/area/*areaId*</td>
+<td><a href="#parametros"><em>areaId</em></a></td>
+<td>Objeto <a href="../../objetos/#area"><em>getArea</em></a></td>
+</tr>
+<tr>
+<td>Eliminación de un almacén</td>
+<td>DELETE</td>
+<td>/administration/area/*areaId*</td>
+<td><a href="#parametros"><em>areaId</em></a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><bold id="parametros">Parámetros url:</bold></p>
+<ul>
+<li><bold id="id-area"><em>areaId</em></bold>: identificador único de un área </li>
+</ul>
+<hr />
+<p>Parámetros de consulta:</p>
+<ul>
+<li><bold id="tipo-area"><em>type</em></bold>: <a href="../../glosario/#areas">tipo de área</a></li>
+</ul>
+<p></br>
+</br></p>
+<h4 id="productos">Productos</h4>
+<p><a href="https://god.gw.postman.com/run-collection/:collection_id"><img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 96px; height: 24px;"></a></p>
+<table>
+<thead>
+<tr>
+<th>Descripción</th>
+<th>Método HTTP</th>
+<th>Dirección</th>
+<th>Entrada de datos</th>
+<th>Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Obtención de productos</td>
+<td>GET</td>
+<td>/administration/product</td>
+<td>Filtros comunes de <a href="../../paginado/">paginado</a></td>
+<td><a href="../../paginado/">Paginado</a> de Objeto <a href="#producto"><em>findAllProducts</em></a></td>
+</tr>
+<tr>
+<td>Obtención de productos por área</td>
+<td>GET</td>
+<td>/administration/product/area/*areaId*</td>
+<td><a href="#parametros"><em>areaId</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td>Creación de un nuevo producto</td>
+<td>POST</td>
+<td>/administration/product</td>
+<td>Objeto <a href="#newProduct"><em>newProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td><bold id="entrada-productos">Entrada de productos</bold></td>
+<td>POST</td>
+<td>/administration/movement/bulk/entry</td>
+<td>Objeto <a href=""><em>bulkEntryStockProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td><bold id="traslado-productos">Traslado de productos hacia otra área</bold></td>
+<td>POST</td>
+<td>/administration/movement/bulk/move</td>
+<td>Objeto <a href="">bulkMoveStockProduct</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Baja de un producto</td>
+<td>POST</td>
+<td>/administration/movement/bulk/out</td>
+<td>Objeto <a href=""><em>bulkOutStockProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td>Ajuste de la cantidad de un producto</td>
+<td>POST</td>
+<td>/administration/movement/bulk/adjust</td>
+<td>Objeto <a href=""><em>bulkAdjustStockProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td>Conversión de un producto en otro</td>
+<td>POST</td>
+<td>/administration/movement/bulk/transformation</td>
+<td>Objeto <a href=""><em>bulkTransformStockProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td>Disminución de producto por desperdicio</td>
+<td>POST</td>
+<td>/administration/movement/bulk/waste</td>
+<td>Objeto <a href=""><em>bulkWasteStockProduct</em></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><bold id="parametros">Parámetros url:</bold></p>
+<ul>
+<li><bold id="id-area"><em>areaId</em></bold>: identificador único de un área </li>
+</ul>
+<p></br>
+</br></p>
+<h4 id="inventario">Inventario</h4>
+<p><a href="https://god.gw.postman.com/run-collection/:collection_id"><img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 96px; height: 24px;"></a></p>
+<table>
+<thead>
+<tr>
+<th>Descripción</th>
+<th>Método HTTP</th>
+<th>Dirección</th>
+<th>Entrada de datos</th>
+<th>Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Obtención de operaciones</td>
+<td>GET</td>
+<td>/administration/movement</td>
+<td><a href="#areaId2"><em>areaId</em></a></td>
+<td><a href="../../paginado/">Paginado</a> de Objeto <a href=""><em>findAllStockMovements</em></a></td>
+</tr>
+<tr>
+<td><bold id="#obtencion-balance">Obtención del balance</bold></td>
+<td>GET</td>
+<td>/report/stock/inventory</td>
+<td>-</td>
+<td>Objeto <a href="#balance-general-almacenes"><em>getGeneralStockReport</em></a></td>
+</tr>
+<tr>
+<td><bold id="obtencion-disponibilidad">Obtención de la disponibilidad por producto</bold></td>
+<td>GET</td>
+<td>/report/stock/disponibility</td>
+<td>-</td>
+<td>Objeto <a href="#reporte-general-almacenes"><em>getReportStockDisponibility</em></a></td>
+</tr>
+<tr>
+<td><bold id="obtencion-reportes-rango">Obtención de reportes dentro de un periodo determinado</bold></td>
+<td>GET</td>
+<td>/stock/period-inventory</td>
+<td><a href=""><em>dateFrom</em></a> </br> <a href=""><em>dateTo</em></a></br><a href=""><em>areaId</em></a></td>
+<td>Arreglo de Objetos <a href=""><em>getStateInventoryPeriod</em></a></td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros de consulta:</p>
+<ul>
+<li>
+<p><em>dateFrom</em>: fecha de inicio del rango de fecha</p>
+</li>
+<li>
+<p><em>dateTo</em>: fecha final del rango de fecha</p>
+</li>
+<li>
+<p><bold id="areaId2"><em>areaId</em></bold>:  identificador único de un área</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        ¿Qué te pareció esta página?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="Esta página fue útil" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9h4m4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21H9m0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03V19Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="Esta página puede mejorar" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12h-4M15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3h9m0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97V5Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              ¡Gracias por tu ayuda!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../capital-humano/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Capital humano">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Capital humano
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../productos/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Productos">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Productos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
