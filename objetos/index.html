@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#objeto-area" class="md-skip">
+        <a href="#objeto-getgeneralstockreport" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -573,9 +573,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#objeto-getgeneralstockreport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto getGeneralStockReport
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-getreportstockdisponibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto getReportStockDisponibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-getstateinventoryperiod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto getStateInventoryPeriod
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-newproduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto NewProduct
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto Product
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objeto-area" class="md-nav__link">
     <span class="md-ellipsis">
       Objeto Area
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-bulkentrystockproduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto bulkEntryStockProduct
     </span>
   </a>
   
@@ -674,9 +728,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#objeto-getgeneralstockreport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto getGeneralStockReport
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-getreportstockdisponibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto getReportStockDisponibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-getstateinventoryperiod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto getStateInventoryPeriod
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-newproduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto NewProduct
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto Product
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objeto-area" class="md-nav__link">
     <span class="md-ellipsis">
       Objeto Area
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objeto-bulkentrystockproduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objeto bulkEntryStockProduct
     </span>
   </a>
   
@@ -699,6 +807,318 @@
 
   <h1>Objetos</h1>
 
+<h2 id="objeto-getgeneralstockreport">Objeto <bold id="balance-general-almacenes"><em>getGeneralStockReport</em></bold></h2>
+<p></br> <sub>Propiedades:</sub></p>
+<ul>
+<li>mainCurrency [srtring]: </br> moneda principal</li>
+</ul>
+<hr />
+<ul>
+<li>result [array]: </br> arreglo de objetos <em>BalanceStockReport</em></li>
+</ul>
+<p></br>
+</br>
+</br></p>
+<p>Objeto <em>BalanceStockReport</em>
+</br> <sub>Propiedades:</sub></p>
+<ul>
+<li>areaId [number]: </br> idenificador único de áreas</li>
+</ul>
+<hr />
+<ul>
+<li>areaName [string]: </br> nombre del área</li>
+</ul>
+<hr />
+<ul>
+<li>total_cost [number]: </br> costo total</li>
+</ul>
+<hr />
+<ul>
+<li>total_estimated_sales [number]: </br> total estimado de ventas</li>
+</ul>
+<hr />
+<ul>
+<li>total_estimated_profits [number]: </br> total estimado de ganancias</li>
+</ul>
+<p>Ejemplo:</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mainCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUP&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;areaId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;areaName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Almacén principal (Shop)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;areaId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;areaName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Area de Prueba - Almacén (Shop)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;areaId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;areaName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Almacen prueba (Shop)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</br>
+</br>
+</br></p>
+<h2 id="objeto-getreportstockdisponibility">Objeto <bold id="reporte-general-almacenes"><em>getReportStockDisponibility</em></bold></h2>
+<p></br> <sub>Propiedades:</sub></p>
+<ul>
+<li><em>mainCurrency</em> [string]: </br> moneda principal</li>
+</ul>
+<hr />
+<ul>
+<li>result [array]: </br> arreglo de objetos <a href="#reporte-almacen"><em>ReportStockDisponibility</em></a></li>
+</ul>
+<p></br></p>
+<p>Objeto <bold id="reporte-almacen"><em>ReportStockDisponibility</em></bold>: </br> <sub>Propiedades:</sub></p>
+<ul>
+<li>productId [number]: </br> identificador del producto</li>
+</ul>
+<hr />
+<ul>
+<li>universalCode [number]: </br> código universal del producto</li>
+</ul>
+<hr />
+<ul>
+<li>productName [string]: </br> nombre del producto</li>
+</ul>
+<hr />
+<ul>
+<li>salesCategoryName [string]: </br> nombre de la categoría</li>
+</ul>
+<hr />
+<ul>
+<li>disponibility [number]: </br> disponibilidad del producto</li>
+</ul>
+<hr />
+<ul>
+<li>total_cost [number]: </br> costo total</li>
+</ul>
+<hr />
+<ul>
+<li>total_estimated_sales [number]: </br> total estimado de ventas</li>
+</ul>
+<hr />
+<ul>
+<li>total_estimated_profits [number]: </br> total estimado de ganancias</li>
+</ul>
+<p>Ejemplo:</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mainCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUP&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;universalCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;productName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chorizo Don Carlos Gallardo y Ramirez&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;salesCategoryName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sin categoría&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;disponibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;universalCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;productName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Producto prueba&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;salesCategoryName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sin categoría&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;disponibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13200</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13200</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</br>
+</br>
+</br></p>
+<h2 id="objeto-getstateinventoryperiod">Objeto <bold id="getStateInventoryPeriod"><em>getStateInventoryPeriod</em></bold></h2>
+<p></br> <sub>Propiedades:</sub></p>
+<ul>
+<li>stockProductId [number]: </br> identificador único de un producto en un almacén</li>
+</ul>
+<hr />
+<ul>
+<li>productId [number]: </br> identificador único de un producto</li>
+</ul>
+<hr />
+<ul>
+<li>name [string]: </br> nombre del producto</li>
+</ul>
+<hr />
+<ul>
+<li>measure [string]: </br> unidad de medida</li>
+</ul>
+<hr />
+<ul>
+<li>productCategory [string]: </br> nombre de la categoría de productos</li>
+</ul>
+<hr />
+<ul>
+<li>productCategoryId [number]: </br> identificador de la categoría a la que pertenece el producto</li>
+</ul>
+<hr />
+<ul>
+<li>inStock [number]: </br> cantidad del producto en almacén</li>
+</ul>
+<hr />
+<ul>
+<li>entry [number]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>initial [number]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>movements [number]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>outs [number]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>sales [number]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>onlineSales [number]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>processed [number]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>waste [number]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>variations [array]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>enableGroup [boolean]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>groupName [string]: </br> description</li>
+</ul>
+<hr />
+<ul>
+<li>groupConvertion [type]: </br> description</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;stockProductId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pasta de bocaditos&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;measure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNIT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;productCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sin categoría&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;productCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;inStock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;initial&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;movements&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;outs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-282</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;onlineSales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;processed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;waste&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;enableGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;groupConvertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<p></br>
+</br>
+</br></p>
+<h2 id="objeto-newproduct">Objeto <bold id="newProduct"><em>NewProduct</em></bold></h2>
+<p></br> <sub>Propiedades:</sub></p>
+<ul>
+<li><em>name</em> [string]: </br> nombre del producto</li>
+</ul>
+<hr />
+<ul>
+<li><em>price</em> [number]: </br> precio del producto</li>
+</ul>
+<hr />
+<ul>
+<li><em>salesCategoryId</em> [number]: </br> identicador único de la categoría de ventas a la que pertenece el producto</li>
+</ul>
+<hr />
+<ul>
+<li><em>type</em> [string]: </br> <a href="../glosario.md#tipos-productos">tipo de producto</a></li>
+</ul>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pantalón&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;salesCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VARIATION&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="objeto-product">Objeto <bold id="producto"><em>Product</em></bold></h2>
+<p></br> <sub>Propiedades:</sub></p>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Producto prueba&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;salesCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;promotionalText&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STOCK&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;showForSale&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;stockLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;qrCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;totalQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;measure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;suggested&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;onSale&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;alertLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;isPublicVisible&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;averagePreparationTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;elaborationSteps&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;averageCost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;isAlertable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;productCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;salesCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;groupConvertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;isWholesale&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;minimunWholesaleAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;enableGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;productCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;salesCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;images&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">&quot;prices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;codeCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;isMain&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;priceSystemId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;listManufacturations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+</br>
+</br>
+</br></p>
 <h2 id="objeto-area">Objeto <bold id="Area">Area</bold></h2>
 <p></br> <sub>Propiedades:</sub></p>
 <ul>
@@ -736,7 +1156,7 @@
 <ul>
 <li>allowDirectlyMovements [boolean]: </br> si está permitido o no el movimiento de productos entre áreas</li>
 </ul>
-<p>Ejemplo</p>
+<p>Ejemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Area de Prueba - Almacén&quot;</span><span class="p">,</span>
@@ -754,7 +1174,22 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Objeto <bold id="nueva-area">NewArea</bold> </br> <sub>Propiedades:</sub></p>
+<p></br>
+</br>
+</br></p>
+<h2 id="objeto-bulkentrystockproduct">Objeto bulkEntryStockProduct</h2>
+<p></br> <sub>Propiedades:</sub></p>
+<ul>
+<li>products [array]: </br></li>
+</ul>
+<hr />
+<ul>
+<li>stockAreaId [number]: </br> </li>
+</ul>
+<hr />
+<ul>
+<li>description [string]: </br></li>
+</ul>
 
 
 

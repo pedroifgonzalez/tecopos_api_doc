@@ -501,20 +501,38 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#disminucion-de-un-producto-por-desperdicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disminución de un producto por desperdicio
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#control-del-inventario" class="md-nav__link">
+  <a href="#control-del-inventario-y-reportes" class="md-nav__link">
     <span class="md-ellipsis">
-      Control del Inventario
+      Control del Inventario y Reportes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Control del Inventario">
+    <nav class="md-nav" aria-label="Control del Inventario y Reportes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-de-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención de operaciones
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#obtencion-del-balance" class="md-nav__link">
@@ -537,7 +555,7 @@
           <li class="md-nav__item">
   <a href="#obtencion-de-reportes-dentro-de-un-periodo-determinado" class="md-nav__link">
     <span class="md-ellipsis">
-      Obtención de reportes dentro de un periodo determinado
+      Obtención de reportes dentro de un período determinado
     </span>
   </a>
   
@@ -955,20 +973,38 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#disminucion-de-un-producto-por-desperdicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disminución de un producto por desperdicio
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#control-del-inventario" class="md-nav__link">
+  <a href="#control-del-inventario-y-reportes" class="md-nav__link">
     <span class="md-ellipsis">
-      Control del Inventario
+      Control del Inventario y Reportes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Control del Inventario">
+    <nav class="md-nav" aria-label="Control del Inventario y Reportes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtencion-de-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtención de operaciones
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#obtencion-del-balance" class="md-nav__link">
@@ -991,7 +1027,7 @@
           <li class="md-nav__item">
   <a href="#obtencion-de-reportes-dentro-de-un-periodo-determinado" class="md-nav__link">
     <span class="md-ellipsis">
-      Obtención de reportes dentro de un periodo determinado
+      Obtención de reportes dentro de un período determinado
     </span>
   </a>
   
@@ -1134,12 +1170,14 @@
 <li>Baja de un producto</li>
 <li>Ajuste de la cantidad de un producto</li>
 <li>Conversión de un producto en otro</li>
+<li>Disminución de un producto por desperdicio</li>
 </ul>
 <p></br></p>
 <h4 id="entrada-de-productos">Entrada de productos</h4>
 <p>Después de haberse definidos productos en el sistema, se puede realizar su entrada o en otras palabras el registro de estos luego de realizada una compra.</p>
 <p>Para realizar una entrada de productos debe seleccionarse el almacén destino y los productos adquiridos, según el precio y proveedor si son necesarios especificarse. Como parte del proceso puede añadirse una nota y la cuenta bancaria empleada para dicha operación.</p>
-<p></br></p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#entrada-productos">/administration/movement/bulk/entry</a></sup></div>
+
 <pre class="mermaid"><code>flowchart TD
    id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)
    id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)
@@ -1157,38 +1195,129 @@
 <p></br>
 </br></p>
 <h4 id="traslado-de-un-producto-hacia-otra-area">Traslado de un producto hacia otra área</h4>
-<p>[Descripcion]</p>
-<p>[Diagrama]</p>
+<p>Los productos de un almacén pueden ser trasladados hacia otro almacén, ya sea un su totalidad o determinada cantidad.</p>
+<p>El procedimiento de realizar un traslado es simple. Primeramente se debe seleccionar el almacén origen, y de este, el o los productos a trasladar.  Luego, especificar la cantidad y finalmente el almacén destino. Este proceso también admite el adjunto de una nota para enriquecer el histórico de dicha operación.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#traslado-productos">/administration/movement/bulk/move</a></sup></div>
+
+<pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén origen&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)
+   id3(Selección del almacén destino&lt;sup&gt;1&lt;/sup&gt;)</code></pre>
+<p><pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/move]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
 <p></br>
 </br></p>
 <h4 id="baja-de-un-producto">Baja de un producto</h4>
-<p>[Descripcion]</p>
-<p>[Diagrama]</p>
+<p>De ser necesario necesario se le puede dar salida o baja a un producto. Para ello se especifica la cantidad del producto de determinado almacén para llevar a cabo su ejecución. El proceso admite adjunto de nota para reflejar las razones y/o conocimiento útil para dicha operación.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/out</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/out]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
 <p></br>
 </br></p>
 <h4 id="ajuste-de-la-cantidad-de-un-producto">Ajuste de la cantidad de un producto</h4>
-<p>[Descripcion]</p>
-<p>[Diagrama]</p>
+<p>Los errores por parte de una aplicación cliente pueden suceder, por tanto si se desea realizar un adjuste sobre la cantidad de un producto en el almacén, es posible.</p>
+<p>En dependencia de si la nueva cantidad es especificada es mayor o menor, se considerará la operación como una entrada o salida del mismo correspondientemente.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/adjust</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/adjust]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre></p>
+<p></br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
 <p></br>
 </br></p>
 <h4 id="conversion-de-un-producto-en-otro">Conversión de un producto en otro</h4>
-<p>[Descripcion]</p>
-<p>[Diagrama]</p>
+<p>El sistema de Tecopos es lo suficientemente versátil para utilizar un producto de materia prima, como por ejemplo, un saco de harina, y convertirlo en otros productos, como paquetes de harina de menor proporción.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/transformation</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos base&lt;sup&gt;2&lt;/sup&gt;)
+   id3(Selección de productos transformados&lt;sup&gt;2&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/transformation]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
+<h4 id="disminucion-de-un-producto-por-desperdicio">Disminución de un producto por desperdicio</h4>
+<p>En caso de que un producto sufra daño o se desperdicie se puede registrar su merma.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/waste</a></sup></div>
+
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén origen&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/movement/bulk/waste]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre></p>
+<p></br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
 <p></br>
 </br>
 </br></p>
 <hr />
-<h3 id="control-del-inventario">Control del Inventario</h3>
+<h3 id="control-del-inventario-y-reportes">Control del Inventario y Reportes</h3>
 <blockquote>
 <p>Limitado a usuarios de rol <a href="../../glosario/#roles">Control</a> o superior.</p>
 </blockquote>
 <p></br></p>
 <ul>
+<li>Obtención de operaciones</li>
 <li>Obtención del balance</li>
 <li>Obtención de la disponibilidad por producto</li>
 <li>Obtención de reportes dentro de un periodo determinado</li>
 </ul>
 <p></br></p>
+<h4 id="obtencion-de-operaciones">Obtención de operaciones</h4>
+<p>Por cada almacén se puede obtener el historial de operaciones realizadas. De estas se pueden conocer detalles como los productos involucrados, la fecha de su ejecución, el usuario que la registró, entre otros.</p>
+<p>Para facilitar la búsqueda entre operaciones se pueden emplear filtros como el tipo de operación, usuarios, rango de fechas, etc.</p>
+<div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-balance">/administration/movement</a></sup></div>
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+    A[Cliente
+        autenticado] -- GET ---&gt; B[ /administration/movement]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;2&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
+</br></p>
 <h4 id="obtencion-del-balance">Obtención del balance</h4>
 <p>Para conocer la situación económica de un negocio, se puede consultar los balances de los almacenes. </p>
 <div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-balance">/report/stock/inventory</a></sup></div>
@@ -1213,15 +1342,20 @@
     B -- Error --&gt; D[Errores&lt;sup&gt;1&lt;/sup&gt;]</code></pre>
 <p></br>
 </br></p>
-<h4 id="obtencion-de-reportes-dentro-de-un-periodo-determinado">Obtención de reportes dentro de un periodo determinado</h4>
+<h4 id="obtencion-de-reportes-dentro-de-un-periodo-determinado">Obtención de reportes dentro de un período determinado</h4>
 <p>Por cada almacén se puede obtener, un resumen de operaciones sobre cada producto dentro de un periodo de tiempo determinado. </p>
 <div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-reportes-rango">/stock/period-inventory</a></sup></div>
 
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén&lt;sup&gt;1&lt;/sup&gt;)</code></pre>
 <pre class="mermaid"><code>flowchart LR
     A[Cliente
     autenticado] -- GET ---&gt; B[ /stock/period-inventory]
     B -- Éxito --&gt; C[200]
-    B -- Error --&gt; D[Errores&lt;sup&gt;1&lt;/sup&gt;]</code></pre>
+    B -- Error --&gt; D[Errores&lt;sup&gt;2&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
 <p></br>
 </br>
 </br></p>
@@ -1244,42 +1378,47 @@
 <td>Obtención de todos los almacenes</td>
 <td>GET</td>
 <td>/administration/area?type=<a href="../../glosario/#areas">STOCK</a><br></td>
-<td>Filtros comunes de <a href="../../paginado/">paginado</a></td>
-<td><a href="../../paginado/">Paginado</a> de Objeto <a href="../../objetos/#area"><em>Area</em></a> de tipo almacén</td>
+<td>Filtros comunes de <a href="../../paginado/">paginado</a> </br></br> <em><a href="#tipo-area">type</a></em>=STOCK</td>
+<td><a href="../../paginado/">Paginado</a> de Objeto <a href="../../objetos/#area"><em>getArea</em></a></td>
 </tr>
 <tr>
 <td>Obtención de un almacén en específco</td>
 <td>GET</td>
-<td>/administration/area/*idArea*</td>
-<td><a href="#parametros"><em>idArea</em></a></td>
-<td>Objeto <a href="../../objetos/#area"><em>Area</em></a> de tipo almacén</td>
+<td>/administration/area/*areaId*</td>
+<td><a href="#parametros"><em>areaId</em></a></td>
+<td>Objeto <a href="../../objetos/#area"><em>getArea</em></a></td>
 </tr>
 <tr>
 <td><bold id="nuevo-almacen">Creación de un nuevo almacén</bold></td>
 <td>POST</td>
 <td>/administration/area</td>
-<td><a href="../../objetos/#nueva-area"><em>NewArea</em></a></td>
-<td>Objeto <a href="../../objetos/#area"><em>Area</em></a> de tipo almacén</td>
+<td><a href="../../objetos/#nueva-area"><em>newArea</em></a></td>
+<td>Objeto <a href="../../objetos/#area"><em>getArea</em></a></td>
 </tr>
 <tr>
 <td>Modificación de un almacén existente</td>
 <td>PATCH</td>
-<td>/administration/area/*idArea*</td>
-<td><a href="#parametros"><em>idArea</em></a></td>
-<td>Objeto <a href="../../objetos/#area"><em>Area</em></a> de tipo almacén</td>
+<td>/administration/area/*areaId*</td>
+<td><a href="#parametros"><em>areaId</em></a></td>
+<td>Objeto <a href="../../objetos/#area"><em>getArea</em></a></td>
 </tr>
 <tr>
 <td>Eliminación de un almacén</td>
 <td>DELETE</td>
-<td>/administration/area/*idArea*</td>
-<td><a href="#parametros"><em>idArea</em></a></td>
+<td>/administration/area/*areaId*</td>
+<td><a href="#parametros"><em>areaId</em></a></td>
 <td>-</td>
 </tr>
 </tbody>
 </table>
-<p><bold id="parametros">Parámetros:</bold></p>
+<p><bold id="parametros">Parámetros url:</bold></p>
 <ul>
-<li>idArea: identificador único de un almacén</li>
+<li><bold id="id-area"><em>areaId</em></bold>: identificador único de un área </li>
+</ul>
+<hr />
+<p>Parámetros de consulta:</p>
+<ul>
+<li><bold id="tipo-area"><em>type</em></bold>: <a href="../../glosario/#areas">tipo de área</a></li>
 </ul>
 <p></br>
 </br></p>
@@ -1297,104 +1436,74 @@
 </thead>
 <tbody>
 <tr>
-<td>Creación de un nuevo producto</td>
-<td>POST</td>
-<td>/administration/product</td>
-<td>Objeto <a href="#newProduct"><em>NewProduct</em></a></td>
-<td></td>
-</tr>
-<tr>
 <td>Obtención de productos</td>
 <td>GET</td>
 <td>/administration/product</td>
-<td>-</td>
-<td><a href="../../paginado/">Paginado</a> de Objeto <a href="#producto"><em>Product</em></a></td>
+<td>Filtros comunes de <a href="../../paginado/">paginado</a></td>
+<td><a href="../../paginado/">Paginado</a> de Objeto <a href="#producto"><em>findAllProducts</em></a></td>
 </tr>
 <tr>
 <td>Obtención de productos por área</td>
 <td>GET</td>
-<td>/administration/product/area/{idArea}</td>
-<td><a href="#parametros"><em>idArea</em></a></td>
+<td>/administration/product/area/*areaId*</td>
+<td><a href="#parametros"><em>areaId</em></a></td>
 <td></td>
 </tr>
 <tr>
-<td>Entrada de productos</td>
+<td>Creación de un nuevo producto</td>
+<td>POST</td>
+<td>/administration/product</td>
+<td>Objeto <a href="#newProduct"><em>newProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td><bold id="entrada-productos">Entrada de productos</bold></td>
 <td>POST</td>
 <td>/administration/movement/bulk/entry</td>
+<td>Objeto <a href=""><em>bulkEntryStockProduct</em></a></td>
 <td></td>
+</tr>
+<tr>
+<td><bold id="traslado-productos">Traslado de productos hacia otra área</bold></td>
+<td>POST</td>
+<td>/administration/movement/bulk/move</td>
+<td>Objeto <a href="">bulkMoveStockProduct</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Baja de un producto</td>
+<td>POST</td>
+<td>/administration/movement/bulk/out</td>
+<td>Objeto <a href=""><em>bulkOutStockProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td>Ajuste de la cantidad de un producto</td>
+<td>POST</td>
+<td>/administration/movement/bulk/adjust</td>
+<td>Objeto <a href=""><em>bulkAdjustStockProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td>Conversión de un producto en otro</td>
+<td>POST</td>
+<td>/administration/movement/bulk/transformation</td>
+<td>Objeto <a href=""><em>bulkTransformStockProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td>Disminución de producto por desperdicio</td>
+<td>POST</td>
+<td>/administration/movement/bulk/waste</td>
+<td>Objeto <a href=""><em>bulkWasteStockProduct</em></a></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Objetos:</strong></p>
-<p>Objeto <bold id="newProduct"><em>NewProduct</em></bold> </br> <sub>Propiedades:</sub></p>
+<p><bold id="parametros">Parámetros url:</bold></p>
 <ul>
-<li><em>name</em> [string]: </br> nombre del producto</li>
+<li><bold id="id-area"><em>areaId</em></bold>: identificador único de un área </li>
 </ul>
-<hr />
-<ul>
-<li><em>price</em> [number]: </br> precio del producto</li>
-</ul>
-<hr />
-<ul>
-<li><em>salesCategoryId</em> [number]: </br> identicador único de la categoría de ventas a la que pertenece el producto</li>
-</ul>
-<hr />
-<ul>
-<li><em>type</em> [string]: </br> <a href="../../glosario/#tipos-productos">tipo de producto</a></li>
-</ul>
-<p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pantalón&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;salesCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VARIATION&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Objeto <bold id="producto"><em>Product</em></bold> </br> <sub>Propiedades:</sub></p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Producto prueba&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;salesCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;promotionalText&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STOCK&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;showForSale&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;stockLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;qrCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;totalQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;measure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNIT&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;suggested&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;onSale&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;alertLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;isPublicVisible&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;averagePreparationTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;elaborationSteps&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;averageCost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;isAlertable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;productCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;salesCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;groupConvertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;isWholesale&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;minimunWholesaleAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;enableGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;productCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;salesCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;images&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">  </span><span class="nt">&quot;prices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;codeCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUP&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;isMain&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;priceSystemId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;listManufacturations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
-<span class="p">}</span>
-</code></pre></div>
 <p></br>
 </br></p>
 <h4 id="inventario">Inventario</h4>
@@ -1411,226 +1520,47 @@
 </thead>
 <tbody>
 <tr>
+<td>Obtención de operaciones</td>
+<td>GET</td>
+<td>/administration/movement</td>
+<td><a href="#areaId2"><em>areaId</em></a></td>
+<td><a href="../../paginado/">Paginado</a> de Objeto <a href=""><em>findAllStockMovements</em></a></td>
+</tr>
+<tr>
 <td><bold id="#obtencion-balance">Obtención del balance</bold></td>
 <td>GET</td>
 <td>/report/stock/inventory</td>
 <td>-</td>
-<td>Objeto <a href="#balance-general-almacenes">GeneralBalanceStock</a></td>
+<td>Objeto <a href="#balance-general-almacenes"><em>getGeneralStockReport</em></a></td>
 </tr>
 <tr>
 <td><bold id="obtencion-disponibilidad">Obtención de la disponibilidad por producto</bold></td>
 <td>GET</td>
 <td>/report/stock/disponibility</td>
 <td>-</td>
-<td>Objeto <a href="#reporte-general-almacenes">GeneralStockReport</a></td>
+<td>Objeto <a href="#reporte-general-almacenes"><em>getReportStockDisponibility</em></a></td>
 </tr>
 <tr>
 <td><bold id="obtencion-reportes-rango">Obtención de reportes dentro de un periodo determinado</bold></td>
 <td>GET</td>
 <td>/stock/period-inventory</td>
-<td>Parámetros de consulta: </br> </br><a href="#fecha-desde">dateFrom</a> </br></br> <a href="#fecha-hasta">dateTo</a> </br></br> <a href="">areaId</a></td>
-<td>Arreglo de Objeto</td>
+<td><a href=""><em>dateFrom</em></a> </br> <a href=""><em>dateTo</em></a></br><a href=""><em>areaId</em></a></td>
+<td>Arreglo de Objetos <a href=""><em>getStateInventoryPeriod</em></a></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Parámetros</strong>:</p>
-<p><bold id="fecha-desde"><em>dateFrom</em></bold>: fecha de inicio del rango de fecha</p>
-<p><bold id="fecha-hasta"><em>dateTo</em></bold>: fecha final del rango de fecha</p>
-<p><bold id="id-area"><em>areaId</em></bold>: identificador único de un área </p>
-<p></br></p>
-<p><strong>Objetos:</strong></p>
-<p>Objeto <bold id="balance-general-almacenes"><em>GeneralBalanceStock</em></bold> </br> <sub>Propiedades:</sub></p>
+<p>Parámetros de consulta:</p>
 <ul>
-<li>mainCurrency [srtring]: </br> Moneda principal</li>
+<li>
+<p><em>dateFrom</em>: fecha de inicio del rango de fecha</p>
+</li>
+<li>
+<p><em>dateTo</em>: fecha final del rango de fecha</p>
+</li>
+<li>
+<p><bold id="areaId2"><em>areaId</em></bold>:  identificador único de un área</p>
+</li>
 </ul>
-<hr />
-<ul>
-<li>result [array]: </br> arreglo de objetos <em>BalanceStockReport</em></li>
-</ul>
-<p></br></p>
-<p>Objeto <em>BalanceStockReport</em> </br> <sub>Propiedades:</sub></p>
-<ul>
-<li>areaId [number]: </br> idenificador único de áreas</li>
-</ul>
-<hr />
-<ul>
-<li>areaName [string]: </br> nombre del área</li>
-</ul>
-<hr />
-<ul>
-<li>total_cost [number]: </br> costo total</li>
-</ul>
-<hr />
-<ul>
-<li>total_estimated_sales [number]: </br> total estimado de ventas</li>
-</ul>
-<hr />
-<ul>
-<li>total_estimated_profits [number]: </br> total estimado de ganancias</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;mainCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUP&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;areaId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;areaName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Almacén principal (Shop)&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;areaId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;areaName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Area de Prueba - Almacén (Shop)&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;areaId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;areaName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Almacen prueba (Shop)&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-<p></br></p>
-<p>Objeto <bold id="reporte-general-almacenes"><em>GeneralStockReport</em></bold> </br> <sub>Propiedades:</sub></p>
-<ul>
-<li><em>mainCurrency</em> [string]: </br> moneda principal</li>
-</ul>
-<hr />
-<ul>
-<li>result [array]: </br> arreglo de objetos <a href="#reporte-almacen"><em>StockReport</em></a></li>
-</ul>
-<p></br></p>
-<p>Objeto <bold id="reporte-almacen"><em>StockReport</em></bold>: </br> <sub>Propiedades:</sub></p>
-<ul>
-<li>productId [number]: </br> identificador del producto</li>
-</ul>
-<hr />
-<ul>
-<li>universalCode [number]: </br> código universal del producto</li>
-</ul>
-<hr />
-<ul>
-<li>productName [string]: </br> nombre del producto</li>
-</ul>
-<hr />
-<ul>
-<li>salesCategoryName [string]: </br> nombre de la categoría</li>
-</ul>
-<hr />
-<ul>
-<li>disponibility [number]: </br> disponibilidad del producto</li>
-</ul>
-<hr />
-<ul>
-<li>total_cost [number]: </br> costo total</li>
-</ul>
-<hr />
-<ul>
-<li>total_estimated_sales [number]: </br> total estimado de ventas</li>
-</ul>
-<hr />
-<ul>
-<li>total_estimated_profits [number]: </br> total estimado de ganancias</li>
-</ul>
-<p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;mainCurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUP&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;universalCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;productName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chorizo Don Carlos Gallardo y Ramirez&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;salesCategoryName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sin categoría&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;disponibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;universalCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;productName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Producto prueba&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;salesCategoryName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sin categoría&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;disponibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13200</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;total_estimated_profits&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13200</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;stockProductId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Producto prueba&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;measure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNIT&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;productCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sin categoría&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;productCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;inStock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;initial&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;movements&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;outs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-312</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;onlineSales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;processed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;waste&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">        </span><span class="nt">&quot;enableGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;groupConvertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;stockProductId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chorizo Don Carlos Gallardo y Ramirez&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;measure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNIT&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;productCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sin categoría&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;productCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;inStock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;initial&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;movements&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;outs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-37</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;onlineSales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;processed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;waste&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">        </span><span class="nt">&quot;enableGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;groupConvertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Carne de cerdo&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;measure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNIT&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;productCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sin categoría&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;productCategoryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;inStock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;initial&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;movements&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;outs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;sales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-50</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;onlineSales&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;processed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;waste&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">        </span><span class="nt">&quot;enableGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;groupConvertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div>
 
 
 
