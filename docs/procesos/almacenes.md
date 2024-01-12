@@ -257,7 +257,7 @@ En caso de que un producto sufra daño o se desperdicie se puede registrar su me
 
 ```mermaid
 flowchart TD
-   id1(Selección del almacén origen<sup>1</sup>)
+   id1(Selección del almacén<sup>1</sup>)
    id2(Selección de productos<sup>2</sup>)
 ```
 ```mermaid
