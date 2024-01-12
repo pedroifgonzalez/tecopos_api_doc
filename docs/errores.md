@@ -9,6 +9,7 @@ La API de Tecopos usa como guía las convenciones de los código de estado de re
 | 400 | Bad Request | El servidor no procesará algo que es percibido como error del cliente, como por ejemplo un parámetro requerido que falta |
 | 404 | Not Found | El servidor no puede encontrar el recurso solicitado |
 | 406 | Not Acceptable | El parametro como identificador único falta |
+| 500 | Internal Server Error | Ha ocurrido un error por parte del sistema. (Se está trabajando constantemente para evitar errores de este tipo) |
 
 
 

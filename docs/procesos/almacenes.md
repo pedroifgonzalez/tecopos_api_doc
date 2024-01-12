@@ -275,6 +275,33 @@ flowchart LR
 
 </br>
 </br>
+#### Despachos de mercancías
+
+A diferencia de un traslado físico, un despacho constituye un proceso más formal y detallado en planificación. La API de Tecopos ofrece de manera separada el control sobre este tipo de proceso. 
+
+Similar a un traslado de productos, se debe especificar el almacén origen, de estos, los productos para conformar el despacho, y el almacén destino. Este proceso puede recibir una nota adjunta para enriquecer el histórico de la operación.
+
+<div style="text-align: right"><sup>Endpoint POST <a href="#traslado-productos">/administration/dispatch</a></sup></div>
+```mermaid
+flowchart TD
+   id1(Selección del almacén origen<sup>1</sup>)
+   id2(Selección de productos<sup>2</sup>)
+   id3(Selección del almacén destino<sup>1</sup>)
+```
+```mermaid
+flowchart LR
+   A[Cliente
+	autenticado] -- POST ---> B[ /administration/dispatch]
+	B -- Éxito --> C[200]
+	B -- Error --> D[Errores<sup>3</sup>]
+```
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles [errores](../errores.md) manejados por la API 
+
+</br>
+</br>
 </br>
 
 ---
@@ -413,13 +440,15 @@ Parámetros de consulta:
 | ---- | ---- | ---- | ---- | ---- |
 | Obtención de productos | GET | /administration/product | Filtros comunes de [paginado](../paginado.md) | [Paginado](../paginado.md) de Objeto [*findAllProducts*](#producto) |
 | Obtención de productos por área | GET | /administration/product/area/\*areaId\* | [*areaId*](#parametros) |  |
+| Obtención de los despachos | GET | /administration/dispatch | Filtros comunes de [paginado](../paginado.md) </br></br>  | Objeto [*findAllDispatches*]() |
 | Creación de un nuevo producto | POST | /administration/product | Objeto [*newProduct*](#newProduct) |  |
 | <bold id="entrada-productos">Entrada de productos</bold> | POST | /administration/movement/bulk/entry | Objeto [*bulkEntryStockProduct*]() |  |
 | <bold id="traslado-productos">Traslado de productos hacia otra área</bold> | POST | /administration/movement/bulk/move | Objeto [bulkMoveStockProduct]() |  |
-| Baja de un producto | POST | /administration/movement/bulk/out | Objeto [*bulkOutStockProduct*]()  |  |
+| Baja de un producto | POST | /administration/movement/bulk/out | Objeto [*bulkOutStockProduct*]() |  |
 | Ajuste de la cantidad de un producto | POST | /administration/movement/bulk/adjust | Objeto [*bulkAdjustStockProduct*]() |  |
-| Conversión de un producto en otro | POST | /administration/movement/bulk/transformation | Objeto [*bulkTransformStockProduct*]()    |  |
+| Conversión de un producto en otro | POST | /administration/movement/bulk/transformation | Objeto [*bulkTransformStockProduct*]() |  |
 | Disminución de producto por desperdicio | POST | /administration/movement/bulk/waste | Objeto [*bulkWasteStockProduct*]() |  |
+| Despachos de mercancías | POST | /administration/dispatch | Objeto [*newDispatch*]() |  |
 
 <bold id="parametros">Parámetros url:</bold>
 
