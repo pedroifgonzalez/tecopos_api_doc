@@ -5,7 +5,7 @@ hide:
 
 Definiciones de términos comunes usados en la APIs de Tecopos
 
-## <bold id="areas">Áreas</bold>
+## **<bold id="areas">Áreas</bold>**
 
 Las áreas pueden ser considerados como departamentos dentro de un negocio.
 
@@ -47,6 +47,8 @@ A continuación se definen las operaciones que registran un cambio en el estado 
 - _Transformación:_ Conversión de un producto en otro.
     
 - _Venta:_ Baja de un producto del inventario por concepto de venta.
+	
+- *Merma*: Disminución de un producto por desperdicio.
 
 ## **Clientes**
 

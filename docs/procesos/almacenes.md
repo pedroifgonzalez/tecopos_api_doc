@@ -101,6 +101,7 @@ flowchart LR
 - Baja de un producto
 - Ajuste de la cantidad de un producto
 - Conversión de un producto en otro
+- Disminución de un producto por desperdicio
 
 </br>
 
@@ -110,7 +111,7 @@ Después de haberse definidos productos en el sistema, se puede realizar su entr
 
 Para realizar una entrada de productos debe seleccionarse el almacén destino y los productos adquiridos, según el precio y proveedor si son necesarios especificarse. Como parte del proceso puede añadirse una nota y la cuenta bancaria empleada para dicha operación.
 
-</br>
+<div style="text-align: right"><sup>Endpoint POST <a href="#entrada-productos">/administration/movement/bulk/entry</a></sup></div>
 
 ```mermaid
 flowchart TD
@@ -138,36 +139,139 @@ flowchart LR
 
 #### Traslado de un producto hacia otra área
 
-[Descripcion]
+Los productos de un almacén pueden ser trasladados hacia otro almacén, ya sea un su totalidad o determinada cantidad.
 
-[Diagrama]
+El procedimiento de realizar un traslado es simple. Primeramente se debe seleccionar el almacén origen, y de este, el o los productos a trasladar.  Luego, especificar la cantidad y finalmente el almacén destino. Este proceso también admite el adjunto de una nota para enriquecer el histórico de dicha operación.
+
+<div style="text-align: right"><sup>Endpoint POST <a href="#traslado-productos">/administration/movement/bulk/move</a></sup></div>
+
+```mermaid
+flowchart TD
+   id1(Selección del almacén origen<sup>1</sup>)
+   id2(Selección de productos<sup>2</sup>)
+   id3(Selección del almacén destino<sup>1</sup>)
+```
+
+```mermaid
+flowchart LR
+   A[Cliente
+	autenticado] -- POST ---> B[ /administration/movement/bulk/move]
+	B -- Éxito --> C[200]
+	B -- Error --> D[Errores<sup>3</sup>]
+```
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles [errores](../errores.md) manejados por la API 
 
 </br>
 </br>
 
 #### Baja de un producto
 
-[Descripcion]
+De ser necesario necesario se le puede dar salida o baja a un producto. Para ello se especifica la cantidad del producto de determinado almacén para llevar a cabo su ejecución. El proceso admite adjunto de nota para reflejar las razones y/o conocimiento útil para dicha operación.
 
-[Diagrama]
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/out</a></sup></div>
+
+```mermaid
+flowchart TD
+   id1(Selección del almacén<sup>1</sup>)
+   id2(Selección de productos<sup>2</sup>)
+```
+```mermaid
+flowchart LR
+   A[Cliente
+	autenticado] -- POST ---> B[ /administration/movement/bulk/out]
+	B -- Éxito --> C[200]
+	B -- Error --> D[Errores<sup>3</sup>]
+```
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles [errores](../errores.md) manejados por la API 
 
 </br>
 </br>
 
 #### Ajuste de la cantidad de un producto
 
-[Descripcion]
+Los errores por parte de una aplicación cliente pueden suceder, por tanto si se desea realizar un adjuste sobre la cantidad de un producto en el almacén, es posible.
 
-[Diagrama]
+En dependencia de si la nueva cantidad es especificada es mayor o menor, se considerará la operación como una entrada o salida del mismo correspondientemente.
+
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/adjust</a></sup></div>
+
+```mermaid
+flowchart TD
+   id1(Selección del almacén<sup>1</sup>)
+   id2(Selección de productos<sup>2</sup>)
+```
+```mermaid
+flowchart LR
+   A[Cliente
+	autenticado] -- POST ---> B[ /administration/movement/bulk/adjust]
+	B -- Éxito --> C[200]
+	B -- Error --> D[Errores<sup>3</sup>]
+```
+
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles [errores](../errores.md) manejados por la API 
 
 </br>
 </br>
 
 #### Conversión de un producto en otro
 
-[Descripcion]
+El sistema de Tecopos es lo suficientemente versátil para utilizar un producto de materia prima, como por ejemplo, un saco de harina, y convertirlo en otros productos, como paquetes de harina de menor proporción.
 
-[Diagrama]
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/transformation</a></sup></div>
+
+```mermaid
+flowchart TD
+   id1(Selección del almacén<sup>1</sup>)
+   id2(Selección de productos base<sup>2</sup>)
+   id3(Selección de productos transformados<sup>2</sup>)
+```
+```mermaid
+flowchart LR
+   A[Cliente
+	autenticado] -- POST ---> B[ /administration/movement/bulk/transformation]
+	B -- Éxito --> C[200]
+	B -- Error --> D[Errores<sup>3</sup>]
+```
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles [errores](../errores.md) manejados por la API 
+
+</br>
+</br>
+
+#### Disminución de un producto por desperdicio
+
+En caso de que un producto sufra daño o se desperdicie se puede registrar su merma.
+
+<div style="text-align: right"><sup>Endpoint POST <a href="#baja-productos">/administration/movement/bulk/waste</a></sup></div>
+
+```mermaid
+flowchart TD
+   id1(Selección del almacén origen<sup>1</sup>)
+   id2(Selección de productos<sup>2</sup>)
+```
+```mermaid
+flowchart LR
+   A[Cliente
+	autenticado] -- POST ---> B[ /administration/movement/bulk/waste]
+	B -- Éxito --> C[200]
+	B -- Error --> D[Errores<sup>3</sup>]
+```
+
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles [errores](../errores.md) manejados por la API 
 
 </br>
 </br>
@@ -175,16 +279,41 @@ flowchart LR
 
 ---
 
-### Control del Inventario
+### Control del Inventario y Reportes
 
 >Limitado a usuarios de rol [Control](../glosario.md#roles) o superior.
 
 </br>
 
+- Obtención de operaciones
 - Obtención del balance
 - Obtención de la disponibilidad por producto
 - Obtención de reportes dentro de un periodo determinado
 
+</br>
+#### Obtención de operaciones
+
+Por cada almacén se puede obtener el historial de operaciones realizadas. De estas se pueden conocer detalles como los productos involucrados, la fecha de su ejecución, el usuario que la registró, entre otros.
+
+Para facilitar la búsqueda entre operaciones se pueden emplear filtros como el tipo de operación, usuarios, rango de fechas, etc.
+
+<div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-balance">/administration/movement</a></sup></div>
+```mermaid
+flowchart TD
+   id1(Selección del almacén<sup>1</sup>)
+```
+```mermaid
+flowchart LR
+	A[Cliente
+		autenticado] -- GET ---> B[ /administration/movement]
+	B -- Éxito --> C[200]
+	B -- Error --> D[Errores<sup>2</sup>]
+```
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: consultar los posibles [errores](../errores.md) manejados por la API 
+
+</br>
 </br>
 #### Obtención del balance
 
@@ -223,19 +352,26 @@ flowchart LR
 </br>
 </br>
 
-#### Obtención de reportes dentro de un periodo determinado
+#### Obtención de reportes dentro de un período determinado
 
 Por cada almacén se puede obtener, un resumen de operaciones sobre cada producto dentro de un periodo de tiempo determinado. 
 
 <div style="text-align: right"><sup>Endpoint GET <a href="#obtencion-reportes-rango">/stock/period-inventory</a></sup></div>
 
 ```mermaid
+flowchart TD
+   id1(Selección del almacén<sup>1</sup>)
+```
+```mermaid
 flowchart LR
 	A[Cliente
 	autenticado] -- GET ---> B[ /stock/period-inventory]
 	B -- Éxito --> C[200]
-	B -- Error --> D[Errores<sup>1</sup>]
+	B -- Error --> D[Errores<sup>2</sup>]
 ```
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: consultar los posibles [errores](../errores.md) manejados por la API 
 
 </br>
 </br>
@@ -251,15 +387,21 @@ flowchart LR
 
 | Descripción | Método HTTP | Dirección | Entrada de datos | Respuesta |
 | ---- | ---- | ---- | ---- | ---- |
-| Obtención de todos los almacenes | GET | /administration/area?type=[STOCK](../glosario.md#areas)<br> | Filtros comunes de [paginado](../paginado.md) | [Paginado](../paginado.md) de Objeto [*Area*](../objetos.md#area) de tipo almacén |
-| Obtención de un almacén en específco | GET | /administration/area/\*idArea\* | [*idArea*](#parametros) | Objeto [*Area*](../objetos.md#area) de tipo almacén  |
-| <bold id="nuevo-almacen">Creación de un nuevo almacén</bold> | POST | /administration/area | [*NewArea*](../objetos.md#nueva-area) | Objeto [*Area*](../objetos.md#area) de tipo almacén |
-| Modificación de un almacén existente | PATCH | /administration/area/\*idArea\* | [*idArea*](#parametros) | Objeto [*Area*](../objetos.md#area) de tipo almacén |
-| Eliminación de un almacén | DELETE | /administration/area/\*idArea\* | [*idArea*](#parametros) | - |
+| Obtención de todos los almacenes | GET | /administration/area?type=[STOCK](../glosario.md#areas)<br> | Filtros comunes de [paginado](../paginado.md) </br></br> *[type](#tipo-area)*=STOCK  | [Paginado](../paginado.md) de Objeto [*getArea*](../objetos.md#area) |
+| Obtención de un almacén en específco | GET | /administration/area/\*areaId\* | [*areaId*](#parametros) | Objeto [*getArea*](../objetos.md#area)  |
+| <bold id="nuevo-almacen">Creación de un nuevo almacén</bold> | POST | /administration/area | [*newArea*](../objetos.md#nueva-area) | Objeto [*getArea*](../objetos.md#area) |
+| Modificación de un almacén existente | PATCH | /administration/area/\*areaId\* | [*areaId*](#parametros) | Objeto [*getArea*](../objetos.md#area) |
+| Eliminación de un almacén | DELETE | /administration/area/\*areaId\* | [*areaId*](#parametros) | - |
 
-<bold id="parametros">Parámetros:</bold>
+<bold id="parametros">Parámetros url:</bold>
 
-- idArea: identificador único de un almacén
+- <bold id="id-area">*areaId*</bold>: identificador único de un área 
+
+---
+
+Parámetros de consulta:
+
+- <bold id="tipo-area">*type*</bold>: [tipo de área](../glosario.md#areas)
 
 </br>
 </br>
@@ -269,87 +411,19 @@ flowchart LR
 
 | Descripción | Método HTTP | Dirección | Entrada de datos | Respuesta |
 | ---- | ---- | ---- | ---- | ---- |
-| Creación de un nuevo producto | POST | /administration/product | Objeto [*NewProduct*](#newProduct) |  |
-| Obtención de productos | GET | /administration/product | - | [Paginado](../paginado.md) de Objeto [*Product*](#producto) |
-| Obtención de productos por área | GET | /administration/product/area/{idArea} | [*idArea*](#parametros) |  |
-| Entrada de productos | POST | /administration/movement/bulk/entry |   |  |
+| Obtención de productos | GET | /administration/product | Filtros comunes de [paginado](../paginado.md) | [Paginado](../paginado.md) de Objeto [*findAllProducts*](#producto) |
+| Obtención de productos por área | GET | /administration/product/area/\*areaId\* | [*areaId*](#parametros) |  |
+| Creación de un nuevo producto | POST | /administration/product | Objeto [*newProduct*](#newProduct) |  |
+| <bold id="entrada-productos">Entrada de productos</bold> | POST | /administration/movement/bulk/entry | Objeto [*bulkEntryStockProduct*]() |  |
+| <bold id="traslado-productos">Traslado de productos hacia otra área</bold> | POST | /administration/movement/bulk/move | Objeto [bulkMoveStockProduct]() |  |
+| Baja de un producto | POST | /administration/movement/bulk/out | Objeto [*bulkOutStockProduct*]()  |  |
+| Ajuste de la cantidad de un producto | POST | /administration/movement/bulk/adjust | Objeto [*bulkAdjustStockProduct*]() |  |
+| Conversión de un producto en otro | POST | /administration/movement/bulk/transformation | Objeto [*bulkTransformStockProduct*]()    |  |
+| Disminución de producto por desperdicio | POST | /administration/movement/bulk/waste | Objeto [*bulkWasteStockProduct*]() |  |
 
+<bold id="parametros">Parámetros url:</bold>
 
-**Objetos:**
-
-Objeto <bold id="newProduct">*NewProduct*</bold> </br> <sub>Propiedades:</sub>
-
-- *name* [string]: </br> nombre del producto
-
----
-
-- *price* [number]: </br> precio del producto
-
----
-
-- *salesCategoryId* [number]: </br> identicador único de la categoría de ventas a la que pertenece el producto
-
----
-
-- *type* [string]: </br> [tipo de producto](../glosario.md#tipos-productos)
-
-Ejemplo:
-
-```json
-{
-  "name": "Pantalón",
-  "price": 350,
-  "salesCategoryId": 15,
-  "type": "VARIATION"
-}
-```
-
-Objeto <bold id="producto">*Product*</bold> </br> <sub>Propiedades:</sub>
-
-```json
-{
-  "id": 1,
-  "name": "Producto prueba",
-  "salesCode": "00001",
-  "description": null,
-  "promotionalText": null,
-  "type": "STOCK",
-  "showForSale": true,
-  "stockLimit": true,
-  "qrCode": null,
-  "totalQuantity": 45,
-  "measure": "UNIT",
-  "suggested": false,
-  "onSale": false,
-  "alertLimit": null,
-  "isPublicVisible": true,
-  "averagePreparationTime": null,
-  "elaborationSteps": null,
-  "averageCost": 0,
-  "isAlertable": true,
-  "productCategoryId": null,
-  "salesCategoryId": null,
-  "groupName": null,
-  "groupConvertion": 1,
-  "isWholesale": null,
-  "minimunWholesaleAmount": 1,
-  "enableGroup": null,
-  "productCategory": null,
-  "salesCategory": null,
-  "images": [],
-  "prices": [
-    {
-      "price": 300,
-      "codeCurrency": "CUP",
-      "isMain": true,
-      "priceSystemId": 1
-    }
-  ],
-  "listManufacturations": []
-  },
-  "variations": []
-}
-```
+- <bold id="id-area">*areaId*</bold>: identificador único de un área 
 
 </br>
 </br>
@@ -359,224 +433,15 @@ Objeto <bold id="producto">*Product*</bold> </br> <sub>Propiedades:</sub>
 
 | Descripción | Método HTTP | Dirección | Entrada de datos | Respuesta |
 | ---- | ---- | ---- | ---- | ---- |
-| <bold id="#obtencion-balance">Obtención del balance</bold> | GET | /report/stock/inventory | - | Objeto [GeneralBalanceStock](#balance-general-almacenes) |
-| <bold id="obtencion-disponibilidad">Obtención de la disponibilidad por producto</bold> | GET | /report/stock/disponibility | - | Objeto [GeneralStockReport](#reporte-general-almacenes) |
-| <bold id="obtencion-reportes-rango">Obtención de reportes dentro de un periodo determinado</bold> | GET | /stock/period-inventory | Parámetros de consulta: </br> </br>[dateFrom](#fecha-desde) </br></br> [dateTo](#fecha-hasta) </br></br> [areaId]() | Arreglo de Objeto  |
+| Obtención de operaciones | GET | /administration/movement | [*areaId*](#areaId2) | [Paginado](../paginado.md) de Objeto [*findAllStockMovements*]() |
+| <bold id="#obtencion-balance">Obtención del balance</bold> | GET | /report/stock/inventory | - | Objeto [*getGeneralStockReport*](#balance-general-almacenes) |
+| <bold id="obtencion-disponibilidad">Obtención de la disponibilidad por producto</bold> | GET | /report/stock/disponibility | - | Objeto [*getReportStockDisponibility*](#reporte-general-almacenes) |
+| <bold id="obtencion-reportes-rango">Obtención de reportes dentro de un periodo determinado</bold> | GET | /stock/period-inventory | [*dateFrom*]() </br> [*dateTo*]()</br>[*areaId*]() | Arreglo de Objetos [*getStateInventoryPeriod*]() |
 
+Parámetros de consulta:
 
-**Parámetros**:
+- *dateFrom*: fecha de inicio del rango de fecha
 
-<bold id="fecha-desde">*dateFrom*</bold>: fecha de inicio del rango de fecha
+- *dateTo*: fecha final del rango de fecha
 
-<bold id="fecha-hasta">*dateTo*</bold>: fecha final del rango de fecha
-
-<bold id="id-area">*areaId*</bold>: identificador único de un área 
-
-</br>
-
-**Objetos:**
-
-Objeto <bold id="balance-general-almacenes">*GeneralBalanceStock*</bold> </br> <sub>Propiedades:</sub>
-
-- mainCurrency [srtring]: </br> Moneda principal
-
----
-
-- result [array]: </br> arreglo de objetos *BalanceStockReport*
-
-</br>
-
-Objeto *BalanceStockReport* </br> <sub>Propiedades:</sub>
-
-- areaId [number]: </br> idenificador único de áreas
-
----
-
-- areaName [string]: </br> nombre del área
-
----
-
-- total_cost [number]: </br> costo total
-
----
-
-- total_estimated_sales [number]: </br> total estimado de ventas
-
----
-
-- total_estimated_profits [number]: </br> total estimado de ganancias
-
-
-Ejemplo:
-
-```json
-{
-  "mainCurrency": "CUP",
-  "result": [
-    {
-      "areaId": 1,
-      "areaName": "Almacén principal (Shop)",
-      "total_cost": 0,
-      "total_estimated_sales": 15000,
-      "total_estimated_profits": 15000
-    },
-    {
-      "areaId": 6,
-      "areaName": "Area de Prueba - Almacén (Shop)",
-      "total_cost": 0,
-      "total_estimated_sales": 0,
-      "total_estimated_profits": 0
-    },
-    {
-      "areaId": 9,
-      "areaName": "Almacen prueba (Shop)",
-      "total_cost": 0,
-      "total_estimated_sales": 0,
-      "total_estimated_profits": 0
-    }
-  ]
-}
-```
-
-</br>
-
-Objeto <bold id="reporte-general-almacenes">*GeneralStockReport*</bold> </br> <sub>Propiedades:</sub>
-
-- *mainCurrency* [string]: </br> moneda principal
-
----
-
-- result [array]: </br> arreglo de objetos [*StockReport*](#reporte-almacen)
-
-</br>
-
-Objeto <bold id="reporte-almacen">*StockReport*</bold>: </br> <sub>Propiedades:</sub>
-
-- productId [number]: </br> identificador del producto
-
----
-
-- universalCode [number]: </br> código universal del producto
-
----
-
-- productName [string]: </br> nombre del producto
-
----
-
-- salesCategoryName [string]: </br> nombre de la categoría
-
----
-
-- disponibility [number]: </br> disponibilidad del producto
-
----
-
-- total_cost [number]: </br> costo total
-
----
-
-- total_estimated_sales [number]: </br> total estimado de ventas
-
----
-
-- total_estimated_profits [number]: </br> total estimado de ganancias
-
-Ejemplo:
-
-```json
-{
-  "mainCurrency": "CUP",
-  "result": [
-    {
-      "productId": 4,
-      "universalCode": 4,
-      "productName": "Chorizo Don Carlos Gallardo y Ramirez",
-      "salesCategoryName": "Sin categoría",
-      "disponibility": 9,
-      "total_cost": 0,
-      "total_estimated_sales": 1800,
-      "total_estimated_profits": 1800
-    },
-    {
-      "productId": 1,
-      "universalCode": 1,
-      "productName": "Producto prueba",
-      "salesCategoryName": "Sin categoría",
-      "disponibility": 44,
-      "total_cost": 0,
-      "total_estimated_sales": 13200,
-      "total_estimated_profits": 13200
-    }
-  ]
-}
-```
-
-Ejemplo:
-
-```json
-[
-    {
-        "stockProductId": 1,
-        "productId": 1,
-        "name": "Producto prueba",
-        "measure": "UNIT",
-        "productCategory": "Sin categoría",
-        "productCategoryId": null,
-        "inStock": 44,
-        "entry": 0,
-        "initial": 0,
-        "movements": 0,
-        "outs": 0,
-        "sales": -312,
-        "onlineSales": 0,
-        "processed": 0,
-        "waste": 0,
-        "variations": [],
-        "enableGroup": null,
-        "groupName": null,
-        "groupConvertion": 1
-    },
-    {
-        "stockProductId": 2,
-        "productId": 4,
-        "name": "Chorizo Don Carlos Gallardo y Ramirez",
-        "measure": "UNIT",
-        "productCategory": "Sin categoría",
-        "productCategoryId": null,
-        "inStock": 9,
-        "entry": 10,
-        "initial": 0,
-        "movements": 0,
-        "outs": 0,
-        "sales": -37,
-        "onlineSales": 0,
-        "processed": 0,
-        "waste": 0,
-        "variations": [],
-        "enableGroup": null,
-        "groupName": null,
-        "groupConvertion": 1
-    },
-    {
-        "productId": 6,
-        "name": "Carne de cerdo",
-        "measure": "UNIT",
-        "productCategory": "Sin categoría",
-        "productCategoryId": null,
-        "inStock": 0,
-        "initial": 0,
-        "entry": 50,
-        "movements": 0,
-        "outs": 0,
-        "sales": -50,
-        "onlineSales": 0,
-        "processed": 0,
-        "waste": 0,
-        "variations": [],
-        "enableGroup": null,
-        "groupName": null,
-        "groupConvertion": 1
-    }
-]
-```
+- <bold id="areaId2">*areaId*</bold>:  identificador único de un área
