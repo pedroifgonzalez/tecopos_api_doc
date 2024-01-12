@@ -510,6 +510,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#despachos-de-mercancias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despachos de mercancías
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -982,6 +991,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#despachos-de-mercancias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despachos de mercancías
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1287,6 +1305,25 @@
 <sup>2</sup>: endpoint de obtención de productos </br>
 <sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
 <p></br>
+</br></p>
+<h4 id="despachos-de-mercancias">Despachos de mercancías</h4>
+<p>A diferencia de un traslado físico, un despacho constituye un proceso más formal y detallado en planificación. La API de Tecopos ofrece de manera separada el control sobre este tipo de proceso. </p>
+<p>Similar a un traslado de productos, se debe especificar el almacén origen, de estos, los productos para conformar el despacho, y el almacén destino. Este proceso puede recibir una nota adjunta para enriquecer el histórico de la operación.</p>
+<div style="text-align: right"><sup>Endpoint POST <a href="#traslado-productos">/administration/dispatch</a></sup></div>
+<p><pre class="mermaid"><code>flowchart TD
+   id1(Selección del almacén origen&lt;sup&gt;1&lt;/sup&gt;)
+   id2(Selección de productos&lt;sup&gt;2&lt;/sup&gt;)
+   id3(Selección del almacén destino&lt;sup&gt;1&lt;/sup&gt;)</code></pre>
+<pre class="mermaid"><code>flowchart LR
+   A[Cliente
+    autenticado] -- POST ---&gt; B[ /administration/dispatch]
+    B -- Éxito --&gt; C[200]
+    B -- Error --&gt; D[Errores&lt;sup&gt;3&lt;/sup&gt;]</code></pre>
+</br>
+<sup>1</sup>: endpoint de obtención de almacenes </br>
+<sup>2</sup>: endpoint de obtención de productos </br>
+<sup>3</sup>: consultar los posibles <a href="../../errores/">errores</a> manejados por la API </p>
+<p></br>
 </br>
 </br></p>
 <hr />
@@ -1450,6 +1487,13 @@
 <td></td>
 </tr>
 <tr>
+<td>Obtención de los despachos</td>
+<td>GET</td>
+<td>/administration/dispatch</td>
+<td>Filtros comunes de <a href="../../paginado/">paginado</a> </br></br></td>
+<td>Objeto <a href=""><em>findAllDispatches</em></a></td>
+</tr>
+<tr>
 <td>Creación de un nuevo producto</td>
 <td>POST</td>
 <td>/administration/product</td>
@@ -1496,6 +1540,13 @@
 <td>POST</td>
 <td>/administration/movement/bulk/waste</td>
 <td>Objeto <a href=""><em>bulkWasteStockProduct</em></a></td>
+<td></td>
+</tr>
+<tr>
+<td>Despachos de mercancías</td>
+<td>POST</td>
+<td>/administration/dispatch</td>
+<td>Objeto <a href=""><em>newDispatch</em></a></td>
 <td></td>
 </tr>
 </tbody>
