@@ -102,6 +102,7 @@ flowchart LR
 - Ajuste de la cantidad de un producto
 - Conversión de un producto en otro
 - Disminución de un producto por desperdicio
+- Despachos de mercancías
 
 </br>
 
